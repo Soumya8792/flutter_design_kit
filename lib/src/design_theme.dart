@@ -4,11 +4,13 @@ import 'design_tokens.dart';
 
 /// Creates coordinated Material 3 themes and installs [DesignColors].
 abstract final class DesignTheme {
+  /// Creates a Material 3 light theme using [seedColor] and [fontFamily].
   static ThemeData light({
     Color seedColor = const Color(0xFF4F46E5),
     String? fontFamily,
   }) => _build(Brightness.light, seedColor, fontFamily);
 
+  /// Creates a Material 3 dark theme using [seedColor] and [fontFamily].
   static ThemeData dark({
     Color seedColor = const Color(0xFF4F46E5),
     String? fontFamily,

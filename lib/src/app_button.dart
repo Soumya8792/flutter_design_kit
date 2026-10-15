@@ -4,6 +4,7 @@ import 'design_tokens.dart';
 
 /// A branded button with primary, secondary, and text treatments.
 class AppButton extends StatelessWidget {
+  /// Creates a button with a label and optional icon or loading indicator.
   const AppButton({
     super.key,
     required this.label,
@@ -14,11 +15,22 @@ class AppButton extends StatelessWidget {
     this.expand = false,
   });
 
+  /// Text displayed inside the button.
   final String label;
+
+  /// Called when the button is activated; `null` disables the button.
   final VoidCallback? onPressed;
+
+  /// Visual treatment used for this button.
   final AppButtonVariant variant;
+
+  /// Optional icon displayed before [label].
   final IconData? icon;
+
+  /// Whether to show a progress indicator and disable activation.
   final bool isLoading;
+
+  /// Whether the button should fill the available horizontal space.
   final bool expand;
 
   @override
@@ -59,4 +71,14 @@ class AppButton extends StatelessWidget {
   }
 }
 
-enum AppButtonVariant { primary, secondary, tertiary }
+/// Available visual treatments for [AppButton].
+enum AppButtonVariant {
+  /// Emphasized filled button.
+  primary,
+
+  /// Outlined button for secondary actions.
+  secondary,
+
+  /// Text-only button for lower emphasis actions.
+  tertiary,
+}

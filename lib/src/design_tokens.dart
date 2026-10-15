@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 /// Semantic colors used by [DesignTheme].
 @immutable
 class DesignColors extends ThemeExtension<DesignColors> {
+  /// Creates semantic colors for surfaces, content, and status feedback.
   const DesignColors({
     required this.primary,
     required this.onPrimary,
@@ -15,16 +16,34 @@ class DesignColors extends ThemeExtension<DesignColors> {
     required this.error,
   });
 
+  /// Main brand color.
   final Color primary;
+
+  /// Color used for content on [primary].
   final Color onPrimary;
+
+  /// Default component and card surface color.
   final Color surface;
+
+  /// Default foreground color on surfaces.
   final Color onSurface;
+
+  /// Alternate, subdued surface color.
   final Color surfaceVariant;
+
+  /// Color used for borders and outlines.
   final Color outline;
+
+  /// Color used for successful states.
   final Color success;
+
+  /// Color used for warning states.
   final Color warning;
+
+  /// Color used for error states.
   final Color error;
 
+  /// Default semantic colors for light themes.
   static const light = DesignColors(
     primary: Color(0xFF4F46E5),
     onPrimary: Colors.white,
@@ -37,6 +56,7 @@ class DesignColors extends ThemeExtension<DesignColors> {
     error: Color(0xFFBA1A1A),
   );
 
+  /// Default semantic colors for dark themes.
   static const dark = DesignColors(
     primary: Color(0xFFB9B5FF),
     onPrimary: Color(0xFF211B75),
@@ -49,6 +69,7 @@ class DesignColors extends ThemeExtension<DesignColors> {
     error: Color(0xFFFFB4AB),
   );
 
+  /// Returns a copy with the supplied colors replaced.
   @override
   DesignColors copyWith({
     Color? primary,
@@ -72,6 +93,7 @@ class DesignColors extends ThemeExtension<DesignColors> {
     error: error ?? this.error,
   );
 
+  /// Interpolates between this set of colors and [other].
   @override
   DesignColors lerp(ThemeExtension<DesignColors>? other, double t) {
     if (other is! DesignColors) return this;
@@ -92,17 +114,29 @@ class DesignColors extends ThemeExtension<DesignColors> {
 /// Spacing, corner radius, and control-size defaults for a design system.
 @immutable
 class DesignSpacing {
+  /// Prevents constructing instances; use the static token values.
   const DesignSpacing._();
 
+  /// Extra-extra-small spacing (4 logical pixels).
   static const double xxs = 4;
+  /// Extra-small spacing (8 logical pixels).
   static const double xs = 8;
+  /// Small spacing (12 logical pixels).
   static const double sm = 12;
+  /// Medium spacing (16 logical pixels).
   static const double md = 16;
+  /// Large spacing (24 logical pixels).
   static const double lg = 24;
+  /// Extra-large spacing (32 logical pixels).
   static const double xl = 32;
+  /// Extra-extra-large spacing (48 logical pixels).
   static const double xxl = 48;
+  /// Small corner radius (8 logical pixels).
   static const double radiusSm = 8;
+  /// Medium corner radius (12 logical pixels).
   static const double radiusMd = 12;
+  /// Large corner radius (20 logical pixels).
   static const double radiusLg = 20;
+  /// Standard interactive control height (48 logical pixels).
   static const double controlHeight = 48;
 }

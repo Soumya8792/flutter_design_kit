@@ -4,14 +4,20 @@ import 'design_tokens.dart';
 
 /// Compact semantic status label.
 class StatusBadge extends StatelessWidget {
+  /// Creates a compact label for communicating a semantic status.
   const StatusBadge({
     super.key,
     required this.label,
     this.tone = StatusTone.neutral,
     this.icon,
   });
+  /// Text shown inside the badge.
   final String label;
+
+  /// Semantic color treatment applied to the badge.
   final StatusTone tone;
+
+  /// Optional icon displayed before the label.
   final IconData? icon;
 
   @override
@@ -51,4 +57,17 @@ class StatusBadge extends StatelessWidget {
   }
 }
 
-enum StatusTone { neutral, success, warning, error }
+/// Semantic color choices for [StatusBadge].
+enum StatusTone {
+  /// Uses the theme's standard foreground color.
+  neutral,
+
+  /// Indicates a successful or completed state.
+  success,
+
+  /// Indicates a state that needs attention.
+  warning,
+
+  /// Indicates a failed or problematic state.
+  error,
+}
