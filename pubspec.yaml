@@ -1,6 +1,6 @@
 name: flutter_design_kit
 description: A customizable Material 3 design system with themes, design tokens, and reusable Flutter UI components.
-version: 0.0.1
+version: 0.0.2
 repository: https://github.com/Soumya8792/flutter_design_kit
 
 environment:
